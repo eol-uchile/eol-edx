@@ -1,0 +1,21 @@
+-e git+https://github.com/fdns/edx-sga@3333366f77d5276942fbf6c93fb143cee7f63105#egg=edx-sga
+-e git+https://github.com/fdns/edx-ora2.git@810e75fb2028272c10b3b86b645720c3e584a4c6#egg=ora2
+-e git+https://github.com/Stanford-Online/xblock-in-video-quiz@release/v0.1.7#egg=xblock_in_video_quiz
+-e git+https://github.com/appsembler/oppia-xblock@a8b514e10cab41deb662e0526117cd9d74f82bcc#egg=xblock-oppia
+-e git+https://github.com/eol-uchile/edx_xblock_scorm.git@305f766ddcdcfb3f213bb5c34644898fd1e3d3e9#egg=edx_xblock_scorm
+-e git+https://github.com/eol-uchile/ubcpi.git@51403a169035aa8208bdd5aa0c7b339b319901d5#egg=ubcpi-xblock
+-e git+https://github.com/eol-uchile/eol-container-xblock.git@df021a7cfee7b969e525a898fe421c733fb3afa8#egg=eolcontainer-xblock
+-e git+https://github.com/eol-uchile/eol-conditional-xblock.git@a540616b5e5210d424abca59bedfa826e87c798a#egg=eolconditional-xblock
+-e git+https://github.com/eol-uchile/eol-question-xblock.git@2a3adf511642817f2d44bd65f8d09f00f9a4cfab#egg=eolquestion-xblock
+-e git+https://github.com/eol-uchile/eol-dialogs-xblock.git@8b6e9b3db4cdad72114f33d2c4e7caeb57652994#egg=eoldialogs-xblock
+-e git+https://github.com/eol-uchile/eol-vof-xblock.git@d8cc620fdc1ebd80d35ce4cdc5edc48246fcb53e#egg=vof-xblock
+-e git+https://github.com/eol-uchile/eol-dialogs-question-xblock@02eb5a1c7e8a029a48c32259a31aaf106391b3a8#egg=dialogsquestionsxblock-xblock
+-e git+https://github.com/eol-uchile/eol-persistent-tab-xblock@b8a87f33e844f6b6a85c3b0d77f6ff401bc6b73c#egg=eolpersistenttab-xblock
+-e git+https://github.com/eol-uchile/eol_feedback@cab2109007bb52340b90d595cefad25d1f08f8e8#egg=eol_feedback
+-e git+https://github.com/Jromo/free-text-response-modificado@1434cef2a5fa7b55dbd1d511bec6aa2c6a335dde#egg=xblock-free-text-response
+-e git+https://github.com/eol-uchile/uchileedxlogin@39c8664204d686cb244e06d3cdbd03b1e21e2b56#egg=uchileedxlogin
+-e git+https://github.com/Jromo/xblock-drag-and-drop-v2@eacf258bdce11702a66e05555cc83bcd0ea0c416#egg=xblock-drag-and-drop-v2
+
+fluent-logger==0.9.3
+python-json-logger==0.1.11
+
