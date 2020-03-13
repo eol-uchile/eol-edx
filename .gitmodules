@@ -1,9 +1,9 @@
 [submodule "themes/cmm-openedx"]
 	path = themes/cmm-openedx
 	url = https://github.com/eol-uchile/cmm-openedx
-[submodule "eol-uchile"]
-	path = themes/eol-uchile
-	url = https://github.com/eol-uchile/eol-uchile-theme
 [submodule "themes/eduonline-ing"]
 	path = themes/eduonline-ing
 	url = https://github.com/eol-uchile/eol_eduonline_ing_theme
+[submodule "themes/eol-uchile"]
+	path = themes/eol-uchile
+	url = https://github.com/eol-uchile/eol-uchile-theme
