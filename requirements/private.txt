@@ -13,6 +13,7 @@
 -e git+https://github.com/eol-uchile/eol-persistent-tab-xblock@b8a87f33e844f6b6a85c3b0d77f6ff401bc6b73c#egg=eolpersistenttab-xblock
 -e git+https://github.com/eol-uchile/eol_feedback@cab2109007bb52340b90d595cefad25d1f08f8e8#egg=eol_feedback
 -e git+https://github.com/Jromo/free-text-response-modificado@1434cef2a5fa7b55dbd1d511bec6aa2c6a335dde#egg=xblock-free-text-response
+-e git+https://github.com/eol-uchile/eol_completion@587766168d87b1d3db9c43c4bc1a47c6ad3a2757#egg=eol_completion
 -e git+https://github.com/eol-uchile/uchileedxlogin@39c8664204d686cb244e06d3cdbd03b1e21e2b56#egg=uchileedxlogin
 -e git+https://github.com/Jromo/xblock-drag-and-drop-v2@eacf258bdce11702a66e05555cc83bcd0ea0c416#egg=xblock-drag-and-drop-v2
 
