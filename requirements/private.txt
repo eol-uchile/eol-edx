@@ -16,6 +16,7 @@
 -e git+https://github.com/eol-uchile/eol_completion@2b0818258d27dd0ff3d3264e62366e1534f0e79f#egg=eol_completion
 -e git+https://github.com/eol-uchile/uchileedxlogin@1c8bbe5ba7007102d28480bf418cd2635e8cdb7d#egg=uchileedxlogin
 -e git+https://github.com/Jromo/xblock-drag-and-drop-v2@eacf258bdce11702a66e05555cc83bcd0ea0c416#egg=xblock-drag-and-drop-v2
+-e git+https://github.com/eol-uchile/eol-zoom-xblock@ddc09e3e4ebc56fa708d43faf28d87feeac54cb9#egg=eolzoom-xblock
 
 fluent-logger==0.9.3
 python-json-logger==0.1.11
