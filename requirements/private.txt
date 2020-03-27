@@ -14,7 +14,7 @@
 -e git+https://github.com/eol-uchile/eol_feedback@cab2109007bb52340b90d595cefad25d1f08f8e8#egg=eol_feedback
 -e git+https://github.com/Jromo/free-text-response-modificado@1434cef2a5fa7b55dbd1d511bec6aa2c6a335dde#egg=xblock-free-text-response
 -e git+https://github.com/eol-uchile/eol_completion@2b0818258d27dd0ff3d3264e62366e1534f0e79f#egg=eol_completion
--e git+https://github.com/eol-uchile/uchileedxlogin@1c8bbe5ba7007102d28480bf418cd2635e8cdb7d#egg=uchileedxlogin
+-e git+https://github.com/eol-uchile/uchileedxlogin@3a6ac499fcab4b5560b044618b5ad5a3055692eb#egg=uchileedxlogin
 -e git+https://github.com/Jromo/xblock-drag-and-drop-v2@eacf258bdce11702a66e05555cc83bcd0ea0c416#egg=xblock-drag-and-drop-v2
 -e git+https://github.com/eol-uchile/eol-zoom-xblock@9b917d926453bfa80a55ad21d7f65dcd6442ce32#egg=eolzoom-xblock
 fluent-logger==0.9.3
