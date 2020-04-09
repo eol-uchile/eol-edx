@@ -11,7 +11,7 @@
 -e git+https://github.com/eol-uchile/eol-vof-xblock.git@d8cc620fdc1ebd80d35ce4cdc5edc48246fcb53e#egg=vof-xblock
 -e git+https://github.com/eol-uchile/eol-dialogs-question-xblock@02eb5a1c7e8a029a48c32259a31aaf106391b3a8#egg=dialogsquestionsxblock-xblock
 -e git+https://github.com/eol-uchile/eol-persistent-tab-xblock@b8a87f33e844f6b6a85c3b0d77f6ff401bc6b73c#egg=eolpersistenttab-xblock
--e git+https://github.com/eol-uchile/eol_feedback@cab2109007bb52340b90d595cefad25d1f08f8e8#egg=eol_feedback
+-e git+https://github.com/eol-uchile/eol_feedback@2d72f5fe6a16bffa1d40d2b71a87620dc25029a2#egg=eol_feedback
 -e git+https://github.com/Jromo/free-text-response-modificado@177eaa67eec1de57e89eb8e16c693d5bce36b056#egg=xblock-free-text-response
 -e git+https://github.com/eol-uchile/eol_completion@2b0818258d27dd0ff3d3264e62366e1534f0e79f#egg=eol_completion
 -e git+https://github.com/eol-uchile/uchileedxlogin@e3c1a28c8f71f28f6ffb456bb69d876573039b34#egg=uchileedxlogin
