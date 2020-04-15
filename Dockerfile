@@ -1,4 +1,4 @@
-FROM eoluchile/edx-platform:8495213b075e7429a597b06065f8db3e0eea6a45
+FROM eoluchile/edx-platform:caf3aaf5272628555623987547527cd5dfdb2d96
 
 # Install private requirements: this is useful for installing custom xblocks.
 # In particular, to install xblocks from a private repository, clone the
