@@ -18,6 +18,6 @@
 -e git+https://github.com/Jromo/xblock-drag-and-drop-v2@eacf258bdce11702a66e05555cc83bcd0ea0c416#egg=xblock-drag-and-drop-v2
 -e git+https://github.com/eol-uchile/eol-zoom-xblock@1b1fef6aa9fc34301d5207213d06e41ee070781e#egg=eolzoom-xblock
 -e git+https://github.com/eol-uchile/eol_contact_form@db8efa178d712c2bfe74847bbf243b318dfc3570#egg=eol_contact_form
-fluent-logger==0.9.3
+fluent-logger==0.9.6
 python-json-logger==0.1.11
 
