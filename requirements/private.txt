@@ -4,7 +4,7 @@
 -e git+https://github.com/appsembler/oppia-xblock@a8b514e10cab41deb662e0526117cd9d74f82bcc#egg=xblock-oppia
 -e git+https://github.com/eol-uchile/edx_xblock_scorm.git@305f766ddcdcfb3f213bb5c34644898fd1e3d3e9#egg=edx_xblock_scorm
 -e git+https://github.com/eol-uchile/ubcpi.git@51403a169035aa8208bdd5aa0c7b339b319901d5#egg=ubcpi-xblock
--e git+https://github.com/eol-uchile/eol-container-xblock.git@718bc2636a43348dcb746d17e42a67e75cb8f90c#egg=eolcontainer-xblock
+-e git+https://github.com/eol-uchile/eol-container-xblock.git@60819ae9768a7abb5b6119c0355e635f31edff33#egg=eolcontainer-xblock
 -e git+https://github.com/eol-uchile/eol-conditional-xblock.git@a540616b5e5210d424abca59bedfa826e87c798a#egg=eolconditional-xblock
 -e git+https://github.com/eol-uchile/eol-question-xblock.git@2a3adf511642817f2d44bd65f8d09f00f9a4cfab#egg=eolquestion-xblock
 -e git+https://github.com/eol-uchile/eol-dialogs-xblock.git@8b6e9b3db4cdad72114f33d2c4e7caeb57652994#egg=eoldialogs-xblock
