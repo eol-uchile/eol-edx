@@ -19,6 +19,6 @@
 -e git+https://github.com/eol-uchile/eol-zoom-xblock@4587661406393202f40a8bf997143e663b7fa03c#egg=eolzoom-xblock
 -e git+https://github.com/eol-uchile/eol_contact_form@db8efa178d712c2bfe74847bbf243b318dfc3570#egg=eol_contact_form
 -e git+https://github.com/eol-uchile/eol_list_grade@e2f5addf13bc0b26b7d487c13a1431af8d24e768#egg=eollistgrade-xblock
--e git+https://github.com/eol-uchile/edx-ucursos@ca4721821dbe0ac7dfd27ae908547cfe4d06e523#egg=edxucursos
+-e git+https://github.com/eol-uchile/edx-ucursos@7ac74c4622a22c25cc2d0bd8430857543d6b2659#egg=edxucursos
 fluent-logger==0.9.6
 python-json-logger==0.1.11
