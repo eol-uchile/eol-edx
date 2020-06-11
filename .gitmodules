@@ -10,3 +10,6 @@
 [submodule "themes/edx-ucursos-theme"]
 	path = themes/edx-ucursos-theme
 	url = https://github.com/eol-uchile/edx-ucursos-theme
+[submodule "themes/eol-uchile-2020"]
+	path = themes/eol-uchile-2020
+	url = https://github.com/matiassalinas/eol-uchile-theme
