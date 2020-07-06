@@ -7,3 +7,9 @@
 [submodule "themes/eol-uchile"]
 	path = themes/eol-uchile
 	url = https://github.com/eol-uchile/eol-uchile-theme
+[submodule "themes/edx-ucursos-theme"]
+	path = themes/edx-ucursos-theme
+	url = https://github.com/eol-uchile/edx-ucursos-theme
+[submodule "themes/eol-uchile-theme-2020"]
+	path = themes/eol-uchile-theme-2020
+	url = https://github.com/eol-uchile/eol-uchile-theme-2020
