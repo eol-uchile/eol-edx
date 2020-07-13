@@ -1,25 +1,24 @@
--e git+https://github.com/fdns/edx-sga@3333366f77d5276942fbf6c93fb143cee7f63105#egg=edx-sga
--e git+https://github.com/fdns/edx-ora2.git@810e75fb2028272c10b3b86b645720c3e584a4c6#egg=ora2
--e git+https://github.com/Stanford-Online/xblock-in-video-quiz@release/v0.1.7#egg=xblock_in_video_quiz
--e git+https://github.com/appsembler/oppia-xblock@a8b514e10cab41deb662e0526117cd9d74f82bcc#egg=xblock-oppia
--e git+https://github.com/eol-uchile/edx_xblock_scorm.git@305f766ddcdcfb3f213bb5c34644898fd1e3d3e9#egg=edx_xblock_scorm
--e git+https://github.com/eol-uchile/ubcpi.git@51403a169035aa8208bdd5aa0c7b339b319901d5#egg=ubcpi-xblock
--e git+https://github.com/eol-uchile/eol-container-xblock.git@60819ae9768a7abb5b6119c0355e635f31edff33#egg=eolcontainer-xblock
--e git+https://github.com/eol-uchile/eol-conditional-xblock.git@a540616b5e5210d424abca59bedfa826e87c798a#egg=eolconditional-xblock
--e git+https://github.com/eol-uchile/eol-question-xblock.git@2a3adf511642817f2d44bd65f8d09f00f9a4cfab#egg=eolquestion-xblock
--e git+https://github.com/eol-uchile/eol-dialogs-xblock.git@8b6e9b3db4cdad72114f33d2c4e7caeb57652994#egg=eoldialogs-xblock
--e git+https://github.com/eol-uchile/eol-vof-xblock.git@d8cc620fdc1ebd80d35ce4cdc5edc48246fcb53e#egg=vof-xblock
--e git+https://github.com/eol-uchile/eol-dialogs-question-xblock@02eb5a1c7e8a029a48c32259a31aaf106391b3a8#egg=dialogsquestionsxblock-xblock
--e git+https://github.com/eol-uchile/eol-persistent-tab-xblock@b8a87f33e844f6b6a85c3b0d77f6ff401bc6b73c#egg=eolpersistenttab-xblock
--e git+https://github.com/eol-uchile/eol_feedback@2d72f5fe6a16bffa1d40d2b71a87620dc25029a2#egg=eol_feedback
--e git+https://github.com/Jromo/free-text-response-modificado@177eaa67eec1de57e89eb8e16c693d5bce36b056#egg=xblock-free-text-response
--e git+https://github.com/eol-uchile/eol_completion@0f41bdde40e2926cc8a466801339f895e6983dee#egg=eol_completion
--e git+https://github.com/eol-uchile/uchileedxlogin@0d9be64c4a189a7cc0be4194f2a10ac0e1d97d1a#egg=uchileedxlogin
--e git+https://github.com/Jromo/xblock-drag-and-drop-v2@eacf258bdce11702a66e05555cc83bcd0ea0c416#egg=xblock-drag-and-drop-v2
--e git+https://github.com/eol-uchile/eol-zoom-xblock@4587661406393202f40a8bf997143e663b7fa03c#egg=eolzoom-xblock
--e git+https://github.com/eol-uchile/eol_contact_form@db8efa178d712c2bfe74847bbf243b318dfc3570#egg=eol_contact_form
--e git+https://github.com/eol-uchile/eol_list_grade@e2f5addf13bc0b26b7d487c13a1431af8d24e768#egg=eollistgrade-xblock
--e git+https://github.com/eol-uchile/edx-userdata@616552f6d2e721c7e37ed02f60ba9235fc19a9f9#egg=edxuserdata
+-e git+https://github.com/eol-uchile/edx-sga@76bb081fec711ad59a8790dac69e8d69a1c59050#egg=edx-sga
+-e git+https://github.com/eol-uchile/edx-ora2.git@d2505a3b2b8de3d83bc2422a7229600dda54eda8#egg=ora2
+-e git+https://github.com/eol-uchile/edx-ucursos@839535acff0253cd3b890b476c32066243489dd2#egg=edx-ucursos
+-e git+https://github.com/eol-uchile/eol-container-xblock.git@eb1e28dc0b58c6f391e7bb001296e690444f53e3#egg=eolcontainer-xblock
+-e git+https://github.com/eol-uchile/eol-conditional-xblock.git@d8779b22771f28c3ca825b3bfaf0d9f328c50e38#egg=eolconditional-xblock
+-e git+https://github.com/eol-uchile/eol-question-xblock.git@f1cb3d5ff23b36b73037dffec2a1d004d9ac287a#egg=eolquestion-xblock
+-e git+https://github.com/eol-uchile/eol-dialogs-xblock.git@39a6a777180f00fe63ac2500f1084b9aa354ff9e#egg=eoldialogs-xblock
+-e git+https://github.com/eol-uchile/eol-dialogs-question-xblock@56a913960b6d1a1e6888b639bf58849c8f5af7b5#egg=dialogsquestionsxblock-xblock
+-e git+https://github.com/eol-uchile/eol-vof-xblock.git@b7e230504b5b53ba1382982eca37f3adb05807ca#egg=vof-xblock
+-e git+https://github.com/eol-uchile/eol-persistent-tab-xblock@78b26270fe729b3d1f7c94b66b46052a02043dfa#egg=eolpersistenttab-xblock
+-e git+https://github.com/eol-uchile/eol_feedback@9535e49cd6c859a8e65484ba59698b2e5e95fd25#egg=eol_feedback
+-e git+https://github.com/eol-uchile/eol-zoom-xblock@40eb1e4c94d538b2b8e9fadb45a9abb27ca5730f#egg=eolzoom-xblock
+-e git+https://github.com/eol-uchile/eol_contact_form@0e4b666da337df2e1e22355551a3823259e8403e#egg=eol_contact_form
+-e git+https://github.com/eol-uchile/ubcpi@9230be63eaa8d546fe1c72dd193fdee2f2d82882#egg=ubcpi
+-e git+https://github.com/eol-uchile/edx_xblock_scorm@1e7b764b1a2b2a94abdac47eaa0a6afa6f4e556f#egg=scormxblock
+-e git+https://github.com/eol-uchile/xblock-drag-and-drop-v2@58d8a691cf9210220925f3d2957b39a377f6704c#egg=xblock-drag-and-drop-v2
+-e git+https://github.com/eol-uchile/uchileedxlogin@f2242e57a0c7863e9d46018144bf851b04251b99#egg=uchileedxlogin
+-e git+https://github.com/eol-uchile/free-text-response@93128c8f3379f98be591901d376c28f53384a85b#egg=free-text-response
+-e git+https://github.com/eol-uchile/edx-userdata@ee3c9098e79008a11b73c7fab2ae6479017d68f5#egg=edx-userdata
+-e git+https://github.com/eol-uchile/eol_completion@58b37d0d23dbe53d40a8467ac3cb12441c3b4147#egg=eol_completion
+-e git+https://github.com/eol-uchile/eol_list_grade@530e3ac900dae4689817553ba78707bd71111f6e#egg=eol_list_grade
+-e git+https://github.com/Stanford-Online/xblock-in-video-quiz@93624bd04a4b613ae53794fd97333192a606aaa8#egg=xblock_in_video_quiz
 fluent-logger==0.9.6
 python-json-logger==0.1.11
-
