@@ -1,5 +1,5 @@
--e git+https://github.com/eol-uchile/edx-sga@ea21aa8920a4c74b17d2e38718cb0eb49eead256#egg=edx-sga
--e git+https://github.com/eol-uchile/edx-ora2.git@dd96e5d1aef027c09f348f3f7a77fa4d4fcff39e#egg=ora2
+-e git+https://github.com/eol-uchile/edx-sga@76bb081fec711ad59a8790dac69e8d69a1c59050#egg=edx-sga
+-e git+https://github.com/eol-uchile/edx-ora2.git@d2505a3b2b8de3d83bc2422a7229600dda54eda8#egg=ora2
 -e git+https://github.com/eol-uchile/edx-ucursos@218782efedbf08da0256970a86ee3c2c2ad2b321#egg=edx-ucursos
 -e git+https://github.com/eol-uchile/eol-container-xblock.git@eb1e28dc0b58c6f391e7bb001296e690444f53e3#egg=eolcontainer-xblock
 -e git+https://github.com/eol-uchile/eol-conditional-xblock.git@d8779b22771f28c3ca825b3bfaf0d9f328c50e38#egg=eolconditional-xblock
@@ -19,7 +19,7 @@
 -e git+https://github.com/eol-uchile/free-text-response@93128c8f3379f98be591901d376c28f53384a85b#egg=free-text-response
 -e git+https://github.com/eol-uchile/edx-userdata@ee3c9098e79008a11b73c7fab2ae6479017d68f5#egg=edx-userdata
 -e git+https://github.com/eol-uchile/eol_completion@58b37d0d23dbe53d40a8467ac3cb12441c3b4147#egg=eol_completion
--e git+https://github.com/eol-uchile/eol_list_grade@f3cafb895035a3a1f0cc0ec321f86e1f039342d1#egg=eol_list_grade
+-e git+https://github.com/eol-uchile/eol_list_grade@530e3ac900dae4689817553ba78707bd71111f6e#egg=eol_list_grade
 -e git+https://github.com/Stanford-Online/xblock-in-video-quiz@93624bd04a4b613ae53794fd97333192a606aaa8#egg=xblock_in_video_quiz
 fluent-logger==0.9.6
 python-json-logger==0.1.11
