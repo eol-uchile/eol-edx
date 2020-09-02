@@ -20,7 +20,7 @@ jobs:
         run: docker build . --file ./Dockerfile --tag eoluchile/eol-edx:${GITHUB_SHA} --tag eoluchile/eol-edx:latest --target base
 
       - name: Build Static files for OpenedX
-        run: docker build . --file ./Dockerfile --tag eoluchile/eol-edx:static-${GITHUB_SHA} --tag eoluchile/eol-edx:static-juniper --target static
+        run: docker build . --file ./Dockerfile --tag eoluchile/eol-edx:static-${GITHUB_SHA} --tag eoluchile/eol-edx:static-latest --target static
 
       - name: Push
         run: |
