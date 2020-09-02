@@ -17,13 +17,18 @@ jobs:
         run: git submodule update --init --recursive
 
       - name: Build OpenedX
-        run: docker build . --file ./Dockerfile --tag eoluchile/eol-edx:${GITHUB_SHA} --tag eoluchile/eol-edx:latest
+        run: docker build . --file ./Dockerfile --tag eoluchile/eol-edx:${GITHUB_SHA} --tag eoluchile/eol-edx:latest --target base
+
+      - name: Build Static files for OpenedX
+        run: docker build . --file ./Dockerfile --tag eoluchile/eol-edx:static-${GITHUB_SHA} --tag eoluchile/eol-edx:static-juniper --target static
 
       - name: Push
         run: |
           echo "${DOCKERHUB_PASSWORD}" | docker login --username ${DOCKERHUB_USER} --password-stdin
           docker push eoluchile/eol-edx:${GITHUB_SHA}
           docker push eoluchile/eol-edx:latest
+          docker push eoluchile/eol-edx:static-${GITHUB_SHA}
+          docker push eoluchile/eol-edx:static-latest
         env:
           DOCKERHUB_USER: ${{ secrets.DOCKERHUB_USER }}
           DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
