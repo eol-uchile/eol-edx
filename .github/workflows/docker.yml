@@ -22,6 +22,9 @@ jobs:
       - name: Build Static files for OpenedX
         run: docker build . --file ./Dockerfile --tag eoluchile/eol-edx:static-${GITHUB_SHA} --tag eoluchile/eol-edx:static-latest --target static
 
+      - name: Build Static files for OpenedX S3
+        run: docker build . --file ./Dockerfile --tag eoluchile/eol-edx:s3-static-${GITHUB_SHA} --tag eoluchile/eol-edx:s3-static-juniper --target s3
+
       - name: Push
         run: |
           echo "${DOCKERHUB_PASSWORD}" | docker login --username ${DOCKERHUB_USER} --password-stdin
@@ -29,6 +32,8 @@ jobs:
           docker push eoluchile/eol-edx:latest
           docker push eoluchile/eol-edx:static-${GITHUB_SHA}
           docker push eoluchile/eol-edx:static-latest
+          docker push eoluchile/eol-edx:s3-static--${GITHUB_SHA}
+          docker push eoluchile/eol-edx:s3-static-juniper
         env:
           DOCKERHUB_USER: ${{ secrets.DOCKERHUB_USER }}
           DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
