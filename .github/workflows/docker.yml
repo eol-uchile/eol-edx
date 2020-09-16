@@ -32,7 +32,7 @@ jobs:
           docker push eoluchile/eol-edx:latest
           docker push eoluchile/eol-edx:static-${GITHUB_SHA}
           docker push eoluchile/eol-edx:static-latest
-          docker push eoluchile/eol-edx:s3-static--${GITHUB_SHA}
+          docker push eoluchile/eol-edx:s3-static-${GITHUB_SHA}
           docker push eoluchile/eol-edx:s3-static-juniper
         env:
           DOCKERHUB_USER: ${{ secrets.DOCKERHUB_USER }}
