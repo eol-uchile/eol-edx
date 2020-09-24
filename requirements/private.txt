@@ -21,6 +21,7 @@
 -e git+https://github.com/eol-uchile/eol_completion@58b37d0d23dbe53d40a8467ac3cb12441c3b4147#egg=eol_completion
 -e git+https://github.com/eol-uchile/eol_list_grade@b8662efc745adfbcc742709b2fc2cff51a9ecd8e#egg=eol_list_grade
 -e git+https://github.com/eol-uchile/xblock-in-video-quiz@2aaa31bedb582c5088a9f0dda3353dc624c35704#egg=xblock_in_video_quiz
+-e git+https://github.com/eol-uchile/eol_duplicate_xblock@8447aeb1484bfd596b3a9957ccc5d80dfb1c8bad#egg=eol_duplicate_xblock
 fluent-logger==0.9.6
 python-json-logger==0.1.11
 django-redis==4.9.0
