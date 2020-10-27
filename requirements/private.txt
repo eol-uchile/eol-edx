@@ -19,7 +19,7 @@
 -e git+https://github.com/eol-uchile/free-text-response@93128c8f3379f98be591901d376c28f53384a85b#egg=free-text-response
 -e git+https://github.com/eol-uchile/edx-userdata@ee3c9098e79008a11b73c7fab2ae6479017d68f5#egg=edx-userdata
 -e git+https://github.com/eol-uchile/eol_completion@64f0d18e3b420b1f8d4c4b823129305905bea88f#egg=eol_completion
--e git+https://github.com/eol-uchile/eol_list_grade@b8662efc745adfbcc742709b2fc2cff51a9ecd8e#egg=eol_list_grade
+-e git+https://github.com/eol-uchile/eol_list_grade@9dc09773f09660387c4a9f08405b6d1d2871bba4#egg=eol_list_grade
 -e git+https://github.com/eol-uchile/xblock-in-video-quiz@2aaa31bedb582c5088a9f0dda3353dc624c35704#egg=xblock_in_video_quiz
 -e git+https://github.com/eol-uchile/eol_duplicate_xblock@183ba0b5a1555f50c5949d72433e77701e4d082b#egg=eol_duplicate_xblock
 -e git+https://github.com/eol-uchile/eol_jump_to@3dfdfb69476003fd7e7020ccc6a7526ddf65a330#egg=eol_jump_to
