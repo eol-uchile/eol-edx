@@ -21,7 +21,7 @@
 -e git+https://github.com/eol-uchile/eol_completion@64f0d18e3b420b1f8d4c4b823129305905bea88f#egg=eol_completion
 -e git+https://github.com/eol-uchile/eol_list_grade@9dc09773f09660387c4a9f08405b6d1d2871bba4#egg=eol_list_grade
 -e git+https://github.com/eol-uchile/xblock-in-video-quiz@2aaa31bedb582c5088a9f0dda3353dc624c35704#egg=xblock_in_video_quiz
--e git+https://github.com/eol-uchile/eol_duplicate_xblock@183ba0b5a1555f50c5949d72433e77701e4d082b#egg=eol_duplicate_xblock
+-e git+https://github.com/eol-uchile/eol_duplicate_xblock@d07b1f056a94b575a9e8446ea33f4ddcf027901f#egg=eol_duplicate_xblock
 -e git+https://github.com/eol-uchile/eol_jump_to@3dfdfb69476003fd7e7020ccc6a7526ddf65a330#egg=eol_jump_to
 -e git+https://github.com/eol-uchile/eol_course_email@2fb0649bdb7930a3a02d39db74202547bbebe152#egg=eol_course_email
 -e git+https://github.com/eol-uchile/eol_gradeforum_xblock@7480ace94f9cfe52382d62fef2f04debc27cb4b3#egg=eol_gradeforum_xblock
