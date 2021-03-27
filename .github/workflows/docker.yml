@@ -20,7 +20,7 @@ jobs:
         run: docker build . --file ./Dockerfile --tag eoluchile/eol-edx:${GITHUB_SHA} --tag eoluchile/eol-edx:latest --target base
 
       - name: Build Static files for OpenedX S3
-        run: docker build . --file ./Dockerfile --tag eoluchile/eol-edx:s3-static-${GITHUB_SHA} --tag eoluchile/eol-edx:s3-static-juniper --target s3
+        run: docker build . --file ./Dockerfile --tag eoluchile/eol-edx:s3-static-${GITHUB_SHA} --tag eoluchile/eol-edx:s3-static-koa --target s3
 
       - name: Push
         run: |
@@ -28,7 +28,7 @@ jobs:
           docker push eoluchile/eol-edx:${GITHUB_SHA}
           docker push eoluchile/eol-edx:latest
           docker push eoluchile/eol-edx:s3-static-${GITHUB_SHA}
-          docker push eoluchile/eol-edx:s3-static-juniper
+          docker push eoluchile/eol-edx:s3-static-koa
         env:
           DOCKERHUB_USER: ${{ secrets.DOCKERHUB_USER }}
           DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
