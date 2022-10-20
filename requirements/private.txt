@@ -39,6 +39,7 @@
 -e git+https://github.com/eol-uchile/eol_img_annotation@6af8b78deecc33e60be2f9549496895fd509da69#egg=eol_img_annotation
 -e git+https://github.com/eol-uchile/CMM-API@03c52a7087341288f01aa3fe130c6d3f0e34cade#egg=CMM-API
 -e git+https://github.com/eol-uchile/problem-builder@97ce5aa38ec9dd284a58298f4e3195db057000cb#egg=problem-builder
+-e git+https://github.com/eol-uchile/eol_auto_login@d3321e51339af81cab51c01eae66139a3bd23417#egg=eol_auto_login
 
 fluent-logger==0.9.6
 python-json-logger==0.1.11
