@@ -41,6 +41,7 @@
 -e git+https://github.com/eol-uchile/problem-builder@97ce5aa38ec9dd284a58298f4e3195db057000cb#egg=problem-builder
 -e git+https://github.com/eol-uchile/eol_auto_login@93ce98962284a6d0e6bbd0f0f5ee4231a279a1d3#egg=eol_auto_login
 -e git+https://github.com/eol-uchile/eol_xblock_discussion@fec2261064d99ab9eba065ef4017777708e8a34e#egg=eoldiscussion
+-e git+https://github.com/eol-uchile/eol_report_analytics@feef8ef18e1e1f3959c1a6073ccdb365a7c14466#egg=eol_report_analytics
 
 fluent-logger==0.9.6
 python-json-logger==0.1.11
