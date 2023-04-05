@@ -43,6 +43,7 @@
 -e git+https://github.com/eol-uchile/eol_xblock_discussion@2cdc42c65268285c32d00df02e9994016a6520b2#egg=eoldiscussion
 -e git+https://github.com/eol-uchile/eol_report_analytics@feef8ef18e1e1f3959c1a6073ccdb365a7c14466#egg=eol_report_analytics
 -e git+https://github.com/eol-uchile/eol_welcome_mail@6c5195dbcbdcb9bfc8e619fd221ac5b806194287#egg=eol_welcome_mail
+-e git+https://github.com/eol-uchile/eol_forum_notifications@9d70f5b03376c1bd16e2cc8a79bac77a19d0d350#egg=eol_forum_notifications
 
 fluent-logger==0.9.6
 python-json-logger==0.1.11
