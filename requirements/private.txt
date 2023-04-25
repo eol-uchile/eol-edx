@@ -40,7 +40,7 @@
 -e git+https://github.com/eol-uchile/CMM-API@03c52a7087341288f01aa3fe130c6d3f0e34cade#egg=CMM-API
 -e git+https://github.com/eol-uchile/problem-builder@97ce5aa38ec9dd284a58298f4e3195db057000cb#egg=problem-builder
 -e git+https://github.com/eol-uchile/eol_auto_login@93ce98962284a6d0e6bbd0f0f5ee4231a279a1d3#egg=eol_auto_login
--e git+https://github.com/eol-uchile/eol_xblock_discussion@9f817d788b5e75df7a57468018caccdbaa3523cb#egg=eoldiscussion
+-e git+https://github.com/eol-uchile/eol_xblock_discussion@32cbba5b5ee175fbff143b20b0fce968aa644f6d#egg=eoldiscussion
 -e git+https://github.com/eol-uchile/eol_report_analytics@feef8ef18e1e1f3959c1a6073ccdb365a7c14466#egg=eol_report_analytics
 -e git+https://github.com/eol-uchile/eol_welcome_mail@6c5195dbcbdcb9bfc8e619fd221ac5b806194287#egg=eol_welcome_mail
 -e git+https://github.com/eol-uchile/eol_forum_notifications@9d70f5b03376c1bd16e2cc8a79bac77a19d0d350#egg=eol_forum_notifications
