@@ -33,7 +33,7 @@
 -e git+https://github.com/eol-uchile/eol_grade_ucursos@9974d9d43b4df564a4bdd03fe3205d816c48e5be#egg=eol_grade_ucursos
 -e git+https://github.com/eol-uchile/eol_xblock_completion@425646dac9245015d3a0926f6fdf4605bd806ed7#egg=eol_xblock_completion
 -e git+https://github.com/eol-uchile/pdfXBlock@1ef65825dfcffbaa4aeec32451f4d495a78ab87c#egg=pdf-xblock
--e git+https://github.com/eol-uchile/eol_vimeo@6ec33d8ff5bb46721471c9176fe2228d6d9ef09b#egg=eol_vimeo
+-e git+https://github.com/eol-uchile/eol_vimeo@cf918de25456ac716a3c596d44bf0a0cf0564d33#egg=eol_vimeo
 -e git+https://github.com/eol-uchile/eol_report_certificate@a5fdc08eac85e5bd2f12abc98de7d3d62b4e874e#egg=eol_report_certificate
 -e git+https://github.com/eol-uchile/flow-control-xblock@4e275efba4e37d9371a27df4997c692c0b40d281#egg=flow-control-xblock
 -e git+https://github.com/eol-uchile/eol_img_annotation@6af8b78deecc33e60be2f9549496895fd509da69#egg=eol_img_annotation
