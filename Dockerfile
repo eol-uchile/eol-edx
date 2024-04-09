@@ -3,7 +3,7 @@ FROM ghcr.io/eol-uchile/edx-platform:koa as base
 # Install private requirements: this is useful for installing custom xblocks.
 # In particular, to install xblocks from a private repository, clone the
 # repositories to ./requirements on the host and add `-e ./myxblock/` to
-# ./requirements/private.txt.
+# ./requirements/xblock.txt.
 COPY ./requirements/ /openedx/requirements
 RUN pip install --src ../venv/src -r /openedx/requirements/python_packages.txt
 
