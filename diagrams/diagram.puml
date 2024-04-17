@@ -6,15 +6,15 @@
 skinparam svgLinkTarget foo
 
 System_Boundary(c1, "edx-platform: eol-edx", $link="https://github.com/eol-uchile/eol-edx") {
-    System_Boundary(c2, "requirements", $link="https://github.com/eol-uchile/eol-edx/blob/master/requirements/") {
+    System_Boundary(c2, "requirements", $link="https://github.com/eol-uchile/eol-edx/blob/eol-release/koa/requirements/") {
         
-            System_Boundary(apis, "apis", $link="https://github.com/eol-uchile/eol-edx/blob/master/requirements/apis.txt") {
+            System_Boundary(apis, "apis", $link="https://github.com/eol-uchile/eol-edx/blob/eol-release/koa/requirements/apis.txt") {
             
                 Container(apis1, "CMM-API", $link="https://github.com/eol-uchile/CMM-API")
             
             }
         
-            System_Boundary(apps, "apps", $link="https://github.com/eol-uchile/eol-edx/blob/master/requirements/apps.txt") {
+            System_Boundary(apps, "apps", $link="https://github.com/eol-uchile/eol-edx/blob/eol-release/koa/requirements/apps.txt") {
             
                 Container(apps1, "eol_auto_login", $link="https://github.com/eol-uchile/eol_auto_login")
             
@@ -38,7 +38,7 @@ System_Boundary(c1, "edx-platform: eol-edx", $link="https://github.com/eol-uchil
             
             }
         
-            System_Boundary(python_packages, "python_packages", $link="https://github.com/eol-uchile/eol-edx/blob/master/requirements/python_packages.txt") {
+            System_Boundary(python_packages, "python_packages", $link="https://github.com/eol-uchile/eol-edx/blob/eol-release/koa/requirements/python_packages.txt") {
             
                 Container(python_packages1, "django-redis")
             
@@ -48,7 +48,7 @@ System_Boundary(c1, "edx-platform: eol-edx", $link="https://github.com/eol-uchil
             
             }
         
-            System_Boundary(reports, "reports", $link="https://github.com/eol-uchile/eol-edx/blob/master/requirements/reports.txt") {
+            System_Boundary(reports, "reports", $link="https://github.com/eol-uchile/eol-edx/blob/eol-release/koa/requirements/reports.txt") {
             
                 Container(reports1, "eol_grade_ucursos", $link="https://github.com/eol-uchile/eol_grade_ucursos")
             
@@ -60,7 +60,7 @@ System_Boundary(c1, "edx-platform: eol-edx", $link="https://github.com/eol-uchil
             
             }
         
-            System_Boundary(tabs_plugins, "tabs_plugins", $link="https://github.com/eol-uchile/eol-edx/blob/master/requirements/tabs_plugins.txt") {
+            System_Boundary(tabs_plugins, "tabs_plugins", $link="https://github.com/eol-uchile/eol-edx/blob/eol-release/koa/requirements/tabs_plugins.txt") {
             
                 Container(tabs_plugins1, "eol_completion", $link="https://github.com/eol-uchile/eol_completion")
             
@@ -74,7 +74,7 @@ System_Boundary(c1, "edx-platform: eol-edx", $link="https://github.com/eol-uchil
             
             }
         
-            System_Boundary(xblocks, "xblocks", $link="https://github.com/eol-uchile/eol-edx/blob/master/requirements/xblocks.txt") {
+            System_Boundary(xblocks, "xblocks", $link="https://github.com/eol-uchile/eol-edx/blob/eol-release/koa/requirements/xblocks.txt") {
             
                 Container(xblocks1, "eolconditional-xblock", $link="https://github.com/eol-uchile/eol-conditional-xblock.git")
             
@@ -132,7 +132,7 @@ System_Boundary(c1, "edx-platform: eol-edx", $link="https://github.com/eol-uchil
         
     }
 
-    System_Boundary(theme, "Themes", $link="https://github.com/eol-uchile/eol-edx/blob/master/themes/") {
+    System_Boundary(theme, "Themes", $link="https://github.com/eol-uchile/eol-edx/blob/eol-release/koa/themes/") {
         
             Container(theme1, "alpha-project-theme", $link="https://github.com/eol-uchile/alpha-project-theme")
         
@@ -150,7 +150,7 @@ System_Boundary(c1, "edx-platform: eol-edx", $link="https://github.com/eol-uchil
         
     }
 
-    System_Boundary(dockerfile, "edx-platform base", $link="https://github.com/eol-uchile/eol-edx/blob/master/Dockerfile") {
+    System_Boundary(dockerfile, "edx-platform base", $link="https://github.com/eol-uchile/eol-edx/blob/eol-release/koa/Dockerfile") {
             Container(dk, "koa", $link="https://ghcr.io/eol-uchile/edx-platform:koa")
     }
 }
