@@ -1,10 +1,10 @@
-name: Reusable workflow
+name: Generate Diagram
 
 on:
   workflow_call:
   push:
     branches:
-      - 'master'
+      - 'eol-release/koa'
     paths:
       - 'Dockerfile'
       - 'requirements/**.txt'
