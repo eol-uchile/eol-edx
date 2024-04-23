@@ -11,7 +11,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event.client_payload.debug == "eol" }}
+    if: ${{ github.event.workflow_run.conclusion }} == "success" || ${{ github.event.client_payload.debug }} == "eol"
     steps:
       - name: Trigger second repository
         run: |
