@@ -5,10 +5,10 @@ on:
     types: [update-image]
 
 jobs:
-  build:
+  update:
     runs-on: ubuntu-latest
-    permissions:
-      packages: write
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
       - uses: actions/checkout@v4
@@ -18,35 +18,28 @@ jobs:
       - name: Pull submodules
         run: git submodule update --init --recursive
 
-      - name: Set current date as env variable
-        run: echo "TS=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
-
-      - name: Build Open edX
-        run: docker build . --file ./Dockerfile --tag ghcr.io/eol-uchile/eol-edx:${GITHUB_SHA} --tag ghcr.io/eol-uchile/eol-edx:${{ github.event.client_payload.version }} --tag ghcr.io/eol-uchile/eol-edx:${{ github.event.client_payload.version }}-${{ env.TS }} --target base
-
-      - name: Build Static files for OpenedX S3
-        run: docker build . --file ./Dockerfile --tag ghcr.io/eol-uchile/eol-edx:s3-static-${GITHUB_SHA} --tag ghcr.io/eol-uchile/eol-edx:s3-static-${{ github.event.client_payload.version }} --tag ghcr.io/eol-uchile/eol-edx:s3-static-${{ github.event.client_payload.version }}-${{ env.TS }} --target s3
-
-      - name: Login to GitHub Container Registry
-        if: github.ref == format('refs/heads/{0}-release/{1}', ${{ github.event.client_payload.project }}, ${{ github.event.client_payload.version }})
-        uses: docker/login-action@v3
-        with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Push to GitHub Container Registry
-        if: github.ref == format('refs/heads/{0}-release/{1}', ${{ github.event.client_payload.project }}, ${{ github.event.client_payload.version }})
+      - name: Obtain latest image version tag
+        id: version
         run: |
-          docker push ghcr.io/eol-uchile/eol-edx:${GITHUB_SHA}
-          docker push ghcr.io/eol-uchile/eol-edx:${{ github.event.client_payload.version }}
-          docker push ghcr.io/eol-uchile/eol-edx:${{ github.event.client_payload.version }}-${{ env.TS }}
-          docker push ghcr.io/eol-uchile/eol-edx:s3-static-${GITHUB_SHA}
-          docker push ghcr.io/eol-uchile/eol-edx:s3-static-${{ github.event.client_payload.version }}
-          docker push ghcr.io/eol-uchile/eol-edx:s3-static-${{ github.event.client_payload.version }}-${{ env.TS }}
+          NEWVERSION=$(gh api --header "Accept: application/vnd.github+json" --header "X-GitHub-Api-Version: 2022-11-28" /orgs/eol-uchile/packages/container/edx-platform/versions | jq '.[] | select( .metadata.container.tags[] == "eol-koa") | .metadata.container.tags[] | select(test("eol-koa-[0-9]+"))' | sed 's#"##g')
+          if [ "${NEWVERSION}" == "" ];
+          then
+            exit 1;
+          else
+            echo "NEWVERSION=${NEWVERSION}" >> $GITHUB_OUTPUT
+          fi
+      - name: Update base image into Dockerfile
+        run: |
+          NEWVERSION=${{ steps.version.outputs.NEWVERSION }} perl -i -pe 's#^(FROM\ ghcr\.io\/eol-uchile\/edx-platform:)\w+(\ as\ base)$#$1$ENV{NEWVERSION}$2#g' Dockerfile
 
-  webhook:
-    needs: [ build ]
-    if: github.ref == format('refs/heads/{0}-release/{1}', ${{ github.event.client_payload.project }}, ${{ github.event.client_payload.version }})
-    uses: ./.github/workflows/webhook.yml
-    secrets: inherit
+      - name: Open Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.PR_SECRET }}
+          author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+          committer: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+          commit-message: "chore: Update edx-platform base version"
+          signoff: true
+          branch: create-pull-request/update-base-image
+          title: Update edx-platform base version to ${{ steps.version.outputs.result }}
+          team-reviewers: devops
