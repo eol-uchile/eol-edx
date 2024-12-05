@@ -1,4 +1,4 @@
--e git+https://github.com/cmmedu/iterative-xblock@v1.0.2#egg=iterativexblock
+-e git+https://github.com/cmmedu/iterative-xblock@v1.0.4#egg=iterativexblock
 -e git+https://github.com/eol-uchile/corfo_generate_code@5ac3d75aeea1334e7f3d9773528c5695a575ed2b#egg=corfogeneratecode
 -e git+https://github.com/eol-uchile/edx-ora2@e873498bd2671b830f19a2441ec1608b7d4bbbc4#egg=ora2
 -e git+https://github.com/eol-uchile/edx-sga@12948a546025eddf570eee59820b0356d42f6620#egg=edx-sga
