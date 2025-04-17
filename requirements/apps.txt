@@ -6,4 +6,4 @@
 -e git+https://github.com/eol-uchile/eol_jump_to@bdbb1fca8ae0e0e7e8d6c38641975942ea9f154e#egg=eol_jump_to
 -e git+https://github.com/eol-uchile/eol_survey@ab8506723ca972bf9ecb6afd1b4fed3f4cf32501#egg=eol_survey
 -e git+https://github.com/eol-uchile/eol_vimeo@cf918de25456ac716a3c596d44bf0a0cf0564d33#egg=eol_vimeo
--e git+https://github.com/eol-uchile/uchileedxlogin@e828e2f651a202bbd78ae39f3bd2a3a323fa1041#egg=uchileedxlogin
+-e git+https://github.com/eol-uchile/uchileedxlogin@0.0.1#egg=uchileedxlogin
