@@ -144,13 +144,11 @@ System_Boundary(c1, "edx-platform: eol-edx", $link="https://github.com/eol-uchil
         
             Container(theme3, "eduonline-ing", $link="https://github.com/eol-uchile/eol_eduonline_ing_theme")
         
-            Container(theme4, "eol-uchile", $link="https://github.com/eol-uchile/eol-uchile-theme")
+            Container(theme4, "eol-uchile-2020", $link="https://github.com/eol-uchile/eol-uchile-theme-2020")
         
-            Container(theme5, "eol-uchile-2020", $link="https://github.com/eol-uchile/eol-uchile-theme-2020")
+            Container(theme5, "redfid-theme", $link="https://github.com/eol-uchile/redfid-theme")
         
-            Container(theme6, "redfid-theme", $link="https://github.com/eol-uchile/redfid-theme")
-        
-            Container(theme7, "virtual-labx-theme", $link="https://github.com/eol-uchile/virtual-labx-theme.git")
+            Container(theme6, "virtual-labx-theme", $link="https://github.com/eol-uchile/virtual-labx-theme.git")
         
     }
 
