@@ -2,8 +2,12 @@ name: Webhook Update EOL
 
 on:
   workflow_call:
+    inputs:
+      app_id:
+        required: true
+        type: string
     secrets:
-      WEBHOOK_SECRET:
+      private_key:
         required: true
   repository_dispatch:
     types: [debug-webhook]
@@ -13,6 +17,15 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.event_name }} == 'workflow_call' || ${{ github.event.client_payload.debug }}
     steps:
+      - name: Create GitHub App Token
+        id: app_token
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ inputs.app_id || vars.EOLITO_BOT_APP_ID }}
+          private-key: ${{ secrets.private_key || secrets.EOLITO_BOT_PRIVATE_KEY }}
+          owner: eol-uchile
+          repositories: edx-kustomize
+
       - name: Trigger edx-kustomize repository workflow
         run: |
-          curl --fail-with-body --silent -X POST -H "Authorization: Bearer ${{ secrets.WEBHOOK_SECRET }}" -H "Accept: application/vnd.github+json" -H "Content-Type: application/json" https://api.github.com/repos/eol-uchile/edx-kustomize/dispatches --data '{"event_type": "update-images-v2", "client_payload": {"flavour": "eol"}}'
+          curl --fail-with-body --silent -X POST -H "Authorization: Bearer ${{ steps.app_token.outputs.token }}" -H "Accept: application/vnd.github+json" -H "Content-Type: application/json" https://api.github.com/repos/eol-uchile/edx-kustomize/dispatches --data '{"event_type": "update-images-v2", "client_payload": {"flavour": "eol"}}'

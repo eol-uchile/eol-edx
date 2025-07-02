@@ -62,4 +62,7 @@ jobs:
     needs: [ variables, build ]
     if: ${{ github.event_name == 'merge_group' }}
     uses: ./.github/workflows/webhook.yml
-    secrets: inherit
+    with:
+      app_id: ${{ vars.EOLITO_BOT_APP_ID }}
+    secrets:
+      private_key: ${{ secrets.EOLITO_BOT_PRIVATE_KEY }}
