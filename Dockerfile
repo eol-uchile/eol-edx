@@ -36,6 +36,6 @@ RUN openedx-assets collect --settings=prod.assets
 # production settings
 ENV SETTINGS=prod.production
 
-FROM rclone/rclone:1.53 AS s3
+FROM rclone/rclone:1.56 AS s3
 
 COPY --from=base /openedx/staticfiles /data
