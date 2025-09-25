@@ -1,4 +1,4 @@
-FROM ghcr.io/eol-uchile/edx-platform:eol-koa-20250630220822 as base
+FROM ghcr.io/eol-uchile/edx-platform:eol-koa-20250630220822 AS base
 
 # Install private requirements: this is useful for installing custom xblocks.
 # In particular, to install xblocks from a private repository, clone the
@@ -6,15 +6,10 @@ FROM ghcr.io/eol-uchile/edx-platform:eol-koa-20250630220822 as base
 # ./requirements/xblock.txt.
 COPY ./requirements/ /openedx/requirements
 RUN pip install --src ../venv/src -r /openedx/requirements/python_packages.txt
-
 RUN pip install --src ../venv/src -r /openedx/requirements/apps.txt
-
 RUN pip install --src ../venv/src -r /openedx/requirements/apis.txt
-
 RUN pip install --src ../venv/src -r /openedx/requirements/reports.txt
-
 RUN pip install --src ../venv/src -r /openedx/requirements/xblocks.txt
-
 RUN pip install --src ../venv/src -r /openedx/requirements/tabs_plugins.txt
 
 # Copy themes
@@ -25,14 +20,14 @@ COPY ./lms-assets.py /openedx/edx-platform/lms/envs/prod/assets.py
 COPY ./cms-assets.py /openedx/edx-platform/cms/envs/prod/assets.py
 
 # Build static assets
-RUN openedx-assets npm \
-    && openedx-assets webpack --env=prod \
-    && openedx-assets common \
-    && openedx-assets themes \
-    && python manage.py lms --settings=prod.assets compilejsi18n \
-    && python manage.py cms --settings=prod.assets compilejsi18n \
-    && openedx-assets collect --settings=prod.assets
+RUN openedx-assets npm
+RUN openedx-assets webpack --env=prod
+RUN openedx-assets common
+RUN openedx-assets themes
+RUN python manage.py lms --settings=prod.assets compilejsi18n
+RUN python manage.py cms --settings=prod.assets compilejsi18n
+RUN openedx-assets collect --settings=prod.assets
 
-FROM rclone/rclone:1.53 as s3
+FROM rclone/rclone:1.53 AS s3
 
 COPY --from=base /openedx/staticfiles /data
