@@ -38,7 +38,7 @@ jobs:
           fi
       - name: Update base image into Dockerfile
         run: |
-          NEWVERSION=${{ steps.version.outputs.NEWVERSION }} perl -i -pe 's#^(FROM\ ghcr\.io/eol-uchile/edx-platform:)[\w\-]+(\ as\ base)$#$1$ENV{NEWVERSION}$2#g' Dockerfile
+          NEWVERSION=${{ steps.version.outputs.NEWVERSION }} perl -i -pe 's#^(FROM\ ghcr\.io/eol-uchile/edx-platform:)[\w\-]+(\ AS\ base)$#$1$ENV{NEWVERSION}$2#g' Dockerfile
 
       - name: Show diff
         run: git diff
