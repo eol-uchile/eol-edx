@@ -118,7 +118,7 @@ System_Boundary(c1, "edx-platform: eol-edx", $link="https://github.com/eol-uchil
             
                 Container(xblocks20, "eolzoom-xblock", $link="https://github.com/eol-uchile/eol-zoom-xblock/releases/tag/1.1.2")
             
-                Container(xblocks21, "flow-control-xblock", $link="https://github.com/eol-uchile/flow-control-xblock/releases/tag/v1.0.1")
+                Container(xblocks21, "flow-control-xblock", $link="https://github.com/eduNEXT/flow-control-xblock/releases/tag/v1.0.1")
             
                 Container(xblocks22, "xblock-free-text-response", $link="https://github.com/eol-uchile/free-text-response/commit/eec58e583bde6aa5098230e4c74a1e59fb9f7702")
             
