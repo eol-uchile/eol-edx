@@ -1,4 +1,4 @@
--e git+https://github.com/eol-uchile/eol_completion@0.0.1#egg=eol_completion
+-e git+https://github.com/eol-uchile/eol_completion@2.0.0#egg=eol_completion
 -e git+https://github.com/eol-uchile/eol_course_email@cfcca8a18389f64a1383f686a684c585019d16f1#egg=eol_course_email
 -e git+https://github.com/eol-uchile/eol_feedback@8fb78e4a9acfe2d1d3e48c296721029ec9b7cdf1#egg=eol_feedback
 -e git+https://github.com/eol-uchile/eol_progress_tab@0.0.1#egg=eol_progress_tab
