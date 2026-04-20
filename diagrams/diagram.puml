@@ -12,6 +12,8 @@ System_Boundary(c1, "edx-platform: eol-edx", $link="https://github.com/eol-uchil
             
                 Container(apis1, "cmmapi", $link="https://github.com/eol-uchile/CMM-API/commit/03c52a7087341288f01aa3fe130c6d3f0e34cade")
             
+                Container(apis2, "eol_api", $link="https://github.com/eol-uchile/eol-api/releases/tag/1.2.0")
+            
             }
         
             System_Boundary(apps, "apps", $link="https://github.com/eol-uchile/eol-edx/blob/eol-release/koa/requirements/apps.txt") {
