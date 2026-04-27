@@ -54,7 +54,7 @@ System_Boundary(c1, "edx-platform: eol-edx", $link="https://github.com/eol-uchil
         
             System_Boundary(reports, "reports", $link="https://github.com/eol-uchile/eol-edx/blob/eol-release/koa/requirements/reports.txt") {
             
-                Container(reports1, "cmmedu_seguimiento", $link="https://github.com/cmmedu/cmmedu-seguimiento/releases/tag/v1.1.0")
+                Container(reports1, "cmmedu_seguimiento", $link="https://github.com/cmmedu/cmmedu-seguimiento/releases/tag/v1.2.1")
             
                 Container(reports2, "gradeucursos", $link="https://github.com/eol-uchile/eol_grade_ucursos/releases/tag/3.0.0")
             
@@ -146,7 +146,7 @@ System_Boundary(c1, "edx-platform: eol-edx", $link="https://github.com/eol-uchil
         
             Container(theme1, "alpha-project-theme", $link="https://github.com/eol-uchile/alpha-project-theme")
         
-            Container(theme2, "cmm-openedx", $link="https://github.com/eol-uchile/cmm-openedx")
+            Container(theme2, "cmm-openedx", $link="https://github.com/eol-uchile/cmm-theme")
         
             Container(theme3, "eduonline-ing", $link="https://github.com/eol-uchile/eol_eduonline_ing_theme")
         
