@@ -10,9 +10,7 @@ COMPREHENSIVE_THEME_LOCALE_PATHS = [
 	"/openedx/themes/alpha-project-theme/conf/locale",
 	"/openedx/themes/cmm-openedx/conf/locale",
 	"/openedx/themes/eduonline-ing/conf/locale",
-	"/openedx/themes/eol-uchile/conf/locale",
 	"/openedx/themes/eol-uchile-2020/conf/locale",
-	"/openedx/themes/redfid-theme/conf/locale",
 	"/openedx/themes/virtual-labx-theme/conf/locale"
 ]
 STATIC_ROOT_BASE = '/openedx/staticfiles'
