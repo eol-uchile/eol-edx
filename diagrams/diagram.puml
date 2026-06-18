@@ -18,7 +18,7 @@ System_Boundary(c1, "edx-platform: eol-edx", $link="https://github.com/eol-uchil
             
                 Container(apps1, "edx-proctoring", $link="https://github.com/openedx/edx-proctoring/releases/tag/2.6.7")
             
-                Container(apps2, "course_classification", $link="https://github.com/eol-uchile/course_classification/releases/tag/1.5.2")
+                Container(apps2, "course_classification", $link="https://github.com/eol-uchile/course_classification/releases/tag/1.6.0")
             
                 Container(apps3, "edxucursos", $link="https://github.com/eol-uchile/edx-ucursos/releases/tag/3.1.0")
             
@@ -94,7 +94,7 @@ System_Boundary(c1, "edx-platform: eol-edx", $link="https://github.com/eol-uchil
             
                 Container(xblocks7, "eolcontainer-xblock", $link="https://github.com/eol-uchile/eol-container-xblock/releases/tag/v1.1.0")
             
-                Container(xblocks8, "eolcourseprogram-xblock", $link="https://github.com/eol-uchile/eol-course-program-xblock/commit/df549273a21c6b4674c6645940d7f33c4c8a2aea")
+                Container(xblocks8, "eolcourseprogram-xblock", $link="https://github.com/eol-uchile/eol-course-program-xblock/releases/tag/0.2.0")
             
                 Container(xblocks9, "dialogsquestionsxblock-xblock", $link="https://github.com/eol-uchile/eol-dialogs-question-xblock/releases/tag/v1.0.0")
             
@@ -130,7 +130,7 @@ System_Boundary(c1, "edx-platform: eol-edx", $link="https://github.com/eol-uchil
             
                 Container(xblocks25, "xblock-drag-and-drop-v2", $link="https://github.com/openedx/xblock-drag-and-drop-v2/releases/tag/v3.0.0")
             
-                Container(xblocks26, "invideoquiz-xblock", $link="https://github.com/eol-uchile/xblock-in-video-quiz/commit/1555dcbd96341f19b76f915f0135f46192869796")
+                Container(xblocks26, "invideoquiz", $link="https://github.com/eol-uchile/xblock-in-video-quiz/releases/tag/1.0.0")
             
             }
         
