@@ -8,3 +8,4 @@
 -e git+https://github.com/eol-uchile/eol_survey@3.2.1+l#egg=eol_survey
 -e git+https://github.com/eol-uchile/eol_vimeo@1.0.1+l#egg=eol_vimeo
 -e git+https://github.com/eol-uchile/uchileedxlogin@2.0.2+l#egg=uchileedxlogin
+-e git+https://github.com/eol-uchile/eol_sso@1.2.0#egg=eol_sso
