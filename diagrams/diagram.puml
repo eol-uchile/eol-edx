@@ -30,7 +30,7 @@ System_Boundary(c1, "edx-platform: eol-edx", $link="https://github.com/eol-uchil
             
                 Container(apps7, "eol_survey", $link="https://github.com/eol-uchile/eol_survey/releases/tag/3.2.1+l")
             
-                Container(apps8, "eol_vimeo", $link="https://github.com/eol-uchile/eol_vimeo/releases/tag/1.0.1+l")
+                Container(apps8, "eol_vimeo", $link="https://github.com/eol-uchile/eol_vimeo/releases/tag/2.0.0+l")
             
                 Container(apps9, "uchileedxlogin", $link="https://github.com/eol-uchile/uchileedxlogin/releases/tag/2.0.2+l")
             
@@ -88,7 +88,7 @@ System_Boundary(c1, "edx-platform: eol-edx", $link="https://github.com/eol-uchil
             
                 Container(xblocks5, "scormxblock-xblock", $link="https://github.com/eol-uchile/edx_xblock_scorm/releases/tag/0.5.1+l")
             
-                Container(xblocks6, "eolconditional-xblock", $link="https://github.com/eol-uchile/eol-conditional-xblock/releases/tag/1.0.0+l")
+                Container(xblocks6, "eolconditional-xblock", $link="https://github.com/eol-uchile/eol-conditional-xblock/releases/tag/1.0.1+l")
             
                 Container(xblocks7, "eolcontainer-xblock", $link="https://github.com/eol-uchile/eol-container-xblock/releases/tag/v1.2.0+l")
             
@@ -100,7 +100,7 @@ System_Boundary(c1, "edx-platform: eol-edx", $link="https://github.com/eol-uchil
             
                 Container(xblocks11, "eol_forum_notifications", $link="https://github.com/eol-uchile/eol_forum_notifications/releases/tag/1.0.4+l")
             
-                Container(xblocks12, "eolgradediscussion", $link="https://github.com/eol-uchile/eol_gradeforum_xblock/releases/tag/1.0.0+l")
+                Container(xblocks12, "eolgradediscussion", $link="https://github.com/eol-uchile/eol_gradeforum_xblock/releases/tag/1.0.1+l")
             
                 Container(xblocks13, "img-annotation", $link="https://github.com/eol-uchile/eol_img_annotation/releases/tag/1.0.1+l")
             
@@ -141,8 +141,6 @@ System_Boundary(c1, "edx-platform: eol-edx", $link="https://github.com/eol-uchil
             Container(theme2, "cmm-openedx", $link="https://github.com/eol-uchile/cmm-theme")
         
             Container(theme3, "eol-uchile-2020", $link="https://github.com/eol-uchile/eol-uchile-theme-2020")
-        
-            Container(theme4, "virtual-labx-theme", $link="https://github.com/eol-uchile/virtual-labx-theme.git")
         
     }
 
