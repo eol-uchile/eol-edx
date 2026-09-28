@@ -1,0 +1,27 @@
+.envrc
+# ignorar todo dentro de env por defecto
+env/*
+# permitir explícitamente las carpetas necesarias para k8s
+!env/k8s/
+!env/plugins/
+!env/apps/
+!env/kustomization.yml
+# bloquear secretos en texto plano
+env/apps/openedx/config/
+env/apps/openedx/settings/
+env/plugins/*/apps/*/settings/
+env/plugins/drydock/k8s/secrets/
+env/apps/permissions/setowners.sh
+# bloquear archivos de construcción y dev locales
+env/plugins/*/build/
+env/plugins/*/dev/
+env/plugins/*/local/
+kustomize
+config.yml
+data
+tutor-plugins/gitops/tests/
+.pytest_cache/
+__pycache__/
+*.pyc
+*.pyo
+secrets.sh
