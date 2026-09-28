@@ -1,0 +1,18 @@
+# Entorno generado por Tutor: se ignora todo salvo los insumos
+# versionados en su posición final del contexto de build (requirements y themes)
+env/*
+!env/build/
+env/build/*
+!env/build/openedx/
+env/build/openedx/*
+!env/build/openedx/requirements/
+!env/build/openedx/themes/
+# Archivos de ejemplo que renderiza Tutor en esas mismas rutas
+env/build/openedx/requirements/private-sample.txt
+env/build/openedx/themes/README
+
+data/
+config.yml
+.venv/
+__pycache__/
+*.pyc
