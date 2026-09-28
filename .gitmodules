@@ -1,0 +1,4 @@
+[submodule "themes/eol-uchile-2020"]
+	path = env/build/openedx/themes/eol-uchile-theme
+	url = https://github.com/eol-uchile/eol-uchile-theme-2020
+	branch = eol-theorical/lilac
