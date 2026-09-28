@@ -1,0 +1,95 @@
+name: Build and Push Image
+
+on:
+  push:
+    branches:
+      - 'eol/tutor-*'
+      - 'eol-release/tutor-*'
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+    branches:
+      - 'eol/tutor-*'
+      - 'eol-release/tutor-*'
+
+concurrency:
+  group: eol-build-${{ github.event_name == 'pull_request' && format('pr-{0}', github.event.pull_request.number) || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  variables:
+    uses: eol-uchile/workflow-commons/.github/workflows/variables.yml@main
+
+  build-and-push:
+    needs: [variables]
+    runs-on: ubuntu-latest
+    env:
+      TS: ${{ needs.variables.outputs.timestamp }}
+      RELEASE_NAME: ${{ needs.variables.outputs.release-name }}
+      TUTOR_ROOT: ${{ github.workspace }}
+      DOCKER_BUILDKIT: 1
+    permissions:
+      packages: write
+      contents: read
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.12.3'
+        cache: 'pip'
+
+    - name: Install requirements
+      run: |
+        pip install -r requirements.txt
+    
+    - name: Prepare Build Environment (Config, Locales, Requirements)
+      run: |
+        ./build.sh
+
+    - name: Generate and apply image tags
+      id: generate_tags
+      run: |
+        echo "image_tag_base=lilac-staging" >> $GITHUB_OUTPUT
+        echo "image_tag_sha=lilac-staging-${GITHUB_SHA::7}" >> $GITHUB_OUTPUT
+        echo "image_tag_ts=lilac-staging-${{ env.TS }}" >> $GITHUB_OUTPUT
+
+    - name: Login to GitHub Container Registry
+      if: ${{ github.event_name == 'push' && env.ACT != 'true' }}
+      uses: docker/login-action@v3
+      with:
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Set OPENEDX image name in Tutor config
+      run: |
+        tutor config save --set DOCKER_IMAGE_OPENEDX=ghcr.io/eol-uchile/openedx-eol:${{ steps.generate_tags.outputs.image_tag_base }}
+
+    - name: Build Tutor OPENEDX image
+      run: |
+        if [ "$ACT" = "true" ]; then
+          tutor images build openedx
+        else
+          tutor images build openedx \
+            --docker-arg="--cache-from=type=registry,ref=ghcr.io/eol-uchile/openedx-eol:cache-${{ env.RELEASE_NAME }}" \
+            --docker-arg="--cache-to=type=registry,ref=ghcr.io/eol-uchile/openedx-eol:cache-${{ env.RELEASE_NAME }},mode=max"
+        fi
+
+    - name: Add extra tags to OPENEDX image
+      run: |
+        docker tag $(tutor config printvalue DOCKER_IMAGE_OPENEDX) ghcr.io/eol-uchile/openedx-eol:${{ steps.generate_tags.outputs.image_tag_sha }}
+        docker tag $(tutor config printvalue DOCKER_IMAGE_OPENEDX) ghcr.io/eol-uchile/openedx-eol:${{ steps.generate_tags.outputs.image_tag_ts }}
+        
+    - name: Verifying OPENEDX local tags
+      run: |
+        docker images | grep "ghcr.io/eol-uchile/openedx-eol"
+
+    - name: Push OPENEDX images
+      if: ${{ github.event_name == 'push' && env.ACT != 'true' }}
+      run: |
+        docker push ghcr.io/eol-uchile/openedx-eol --all-tags

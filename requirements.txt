@@ -1,0 +1,4 @@
+tutor>=12.0.0,<13.0.0
+tutor-minio>=12.0.0,<13.0.0
+setuptools<70
+click<8.1.0
