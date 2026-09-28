@@ -1,0 +1,7 @@
+# Punto de entrada que instala el Dockerfile de Tutor (pip install -r private.txt)
+-r apis.txt
+-r apps.txt
+-r python_packages.txt
+-r reports.txt
+-r tabs_plugins.txt
+-r xblocks.txt
