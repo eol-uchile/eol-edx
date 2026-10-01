@@ -1,0 +1,158 @@
+name: Build and Push Image
+
+on:
+  merge_group:
+    types: [checks_requested]
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+    branches:
+      - 'eol/*'
+      - 'eol-release/*'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  variables:
+    uses: eol-uchile/workflow-commons/.github/workflows/variables.yml@main
+
+  build-and-push:
+    needs: [ variables ]
+    runs-on: ubuntu-latest
+    outputs:
+      image_tag_ts: ${{ steps.generate_tags.outputs.image_tag_ts }}
+      image_tag_sha: ${{ steps.generate_tags.outputs.image_tag_sha }}
+      image_tag_assets_ts: ${{ steps.generate_tags.outputs.image_tag_assets_ts }}
+      image_tag_assets_sha: ${{ steps.generate_tags.outputs.image_tag_assets_sha }}
+    env:
+      TUTOR_ROOT: ${{ github.workspace }}
+      DOCKER_BUILDKIT: 1
+      TS: ${{ needs.variables.outputs.timestamp }}
+      RELEASE_NAME: ${{ needs.variables.outputs.release-name }}
+      IS_PROD: ${{ needs.variables.outputs.is-prod }}
+    permissions:
+      packages: write
+      contents: read
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v7
+      with:
+        submodules: recursive
+
+    - name: Load environment variables
+      run: cat .env >> $GITHUB_ENV
+
+    - name: Validate environment variables
+      run: |
+        if [ -z "$EDX_PLATFORM_VERSION" ] || [ -z "$OPENEDX_COMMON_VERSION" ] || [ -z "$EDX_PLATFORM_REPOSITORY" ] || [ -z "$DOCKER_IMAGE_REPOSITORY" ] || [ -z "$EDX_PLATFORM_CACHE_REPOSITORY" ]; then
+          echo "ERROR: faltan variables requeridas en .env."
+          exit 1
+        fi
+
+    - name: Set up Python
+      uses: actions/setup-python@v7
+      with:
+        python-version: '3.12'
+        cache: 'pip'
+
+    - name: Install requirements
+      run: |
+        pip install -r requirements.txt
+
+    - name: Generate image tags
+      id: generate_tags
+      run: |
+        if [[ "${IS_PROD}" == "true" ]]; then
+          IMAGE_TAG_PREFIX="${RELEASE_NAME}"
+        else
+          IMAGE_TAG_PREFIX="testing-${RELEASE_NAME}"
+        fi
+        echo "IMAGE_TAG_PREFIX=${IMAGE_TAG_PREFIX}" >> $GITHUB_ENV
+        echo "image_tag_base=${IMAGE_TAG_PREFIX}" >> $GITHUB_OUTPUT
+        echo "image_tag_sha=${IMAGE_TAG_PREFIX}-${GITHUB_SHA::7}" >> $GITHUB_OUTPUT
+        echo "image_tag_ts=${IMAGE_TAG_PREFIX}-${TS}" >> $GITHUB_OUTPUT
+        echo "image_tag_assets_base=assets-${IMAGE_TAG_PREFIX}" >> $GITHUB_OUTPUT
+        echo "image_tag_assets_sha=assets-${IMAGE_TAG_PREFIX}-${GITHUB_SHA::7}" >> $GITHUB_OUTPUT
+        echo "image_tag_assets_ts=assets-${IMAGE_TAG_PREFIX}-${TS}" >> $GITHUB_OUTPUT
+
+    - name: Configure Tutor
+      run: |
+        tutor config save \
+          --set EDX_PLATFORM_REPOSITORY="${EDX_PLATFORM_REPOSITORY}" \
+          --set EDX_PLATFORM_VERSION="${EDX_PLATFORM_VERSION}" \
+          --set OPENEDX_COMMON_VERSION="${OPENEDX_COMMON_VERSION}" \
+          --set DOCKER_IMAGE_OPENEDX="${DOCKER_IMAGE_REPOSITORY}:${{ steps.generate_tags.outputs.image_tag_base }}"
+
+    - name: Fetch platform locales
+      run: |
+        git clone --no-checkout --depth=1 --filter=tree:0 --branch "${EDX_PLATFORM_VERSION}" "${EDX_PLATFORM_REPOSITORY}" "env/build/openedx/locale/eol"
+        git -C "env/build/openedx/locale/eol" sparse-checkout set --no-cone /conf/locale/
+        git -C "env/build/openedx/locale/eol" checkout
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v4
+      with:
+        install: true
+        buildkitd-config-inline: |
+          [worker.oci]
+          max-parallelism = 2
+
+    - name: Login to GitHub Container Registry
+      if: ${{ env.ACT != 'true' }}
+      uses: docker/login-action@v4
+      with:
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Build Tutor OPENEDX image
+      run: |
+        if [ "$ACT" = "true" ]; then
+          tutor images build openedx
+        else
+          tutor images build openedx \
+            --docker-arg="--cache-from=type=registry,ref=${EDX_PLATFORM_CACHE_REPOSITORY}:${IMAGE_TAG_PREFIX}" \
+            --docker-arg="--cache-from=type=registry,ref=${DOCKER_IMAGE_REPOSITORY}:${IMAGE_TAG_PREFIX}-cache" \
+            --docker-arg="--cache-to=type=registry,ref=${DOCKER_IMAGE_REPOSITORY}:${IMAGE_TAG_PREFIX}-cache,mode=max" \
+            --docker-arg="--output=type=docker,push=false"
+        fi
+
+    - name: Add extra tags to OPENEDX image
+      run: |
+        docker tag $(tutor config printvalue DOCKER_IMAGE_OPENEDX) ${DOCKER_IMAGE_REPOSITORY}:${{ steps.generate_tags.outputs.image_tag_sha }}
+        docker tag $(tutor config printvalue DOCKER_IMAGE_OPENEDX) ${DOCKER_IMAGE_REPOSITORY}:${{ steps.generate_tags.outputs.image_tag_ts }}
+
+    - name: Build S3 image with Open edX assets
+      run: |
+        docker build . \
+          --file ./Dockerfile \
+          --build-arg BASE_IMAGE=$(tutor config printvalue DOCKER_IMAGE_OPENEDX) \
+          --tag ${DOCKER_IMAGE_REPOSITORY}:${{ steps.generate_tags.outputs.image_tag_assets_base }} \
+          --tag ${DOCKER_IMAGE_REPOSITORY}:${{ steps.generate_tags.outputs.image_tag_assets_sha }} \
+          --tag ${DOCKER_IMAGE_REPOSITORY}:${{ steps.generate_tags.outputs.image_tag_assets_ts }} \
+          --target s3
+        
+    - name: Verifying OPENEDX local tags
+      run: |
+        docker images | grep "${DOCKER_IMAGE_REPOSITORY}"
+
+    - name: Push images
+      if: ${{ github.event_name == 'merge_group' && env.ACT != 'true' }}
+      run: |
+        docker push ${DOCKER_IMAGE_REPOSITORY} --all-tags
+
+  webhook:
+    needs: [ variables, build-and-push ]
+    if: ${{ github.event_name == 'merge_group' }}
+    uses: ./.github/workflows/webhook.yml
+    with:
+      app_id: ${{ vars.EOLITO_BOT_APP_ID }}
+      flavour: ${{ needs.variables.outputs.is-prod == 'true' && needs.variables.outputs.project || 'staging' }}
+      code: ${{ needs.variables.outputs.code }}
+      version: ${{ needs.variables.outputs.release-name }}
+    secrets:
+      private_key: ${{ secrets.EOLITO_BOT_PRIVATE_KEY }}
