@@ -4,4 +4,4 @@ FROM ${BASE_IMAGE} AS base
 
 FROM rclone/rclone:1.75 AS s3
 
-COPY --from=base /openedx/staticfiles /data
+COPY --from=base /openedx/staticfiles /openedx/staticfiles
